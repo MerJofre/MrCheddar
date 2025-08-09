@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --color-principal: #e85d04;   /* Naranja tipo cheddar */
+    --color-secundario: #6a040f; /* Rojo oscuro */
+    --color-fondo: #fff8f0;
+    --color-texto: #333;
+    --color-boton: #ffba08;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header p {
+    font-weight: 300;
+}
+
+.menu {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item h2 {
+    color: var(--color-secundario);
+    margin-bottom: 0.5rem;
+}
+
+.item p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--color-principal);
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+button {
+    background-color: var(--color-boton);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    background-color: var(--color-secundario);
+    color: white;
+}
