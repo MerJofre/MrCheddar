@@ -3,7 +3,7 @@
 :root {
     --color-principal: #e85d04;   /* Naranja tipo cheddar */
     --color-secundario: #6a040f; /* Rojo oscuro */
-    --color-fondo: #fff8f0;
+    --color-fondo: #000000;
     --color-texto: #333;
     --color-boton: #ffba08;
 }
