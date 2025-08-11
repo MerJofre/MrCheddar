@@ -10,35 +10,29 @@
     <header>
         <h1>🍔 Mr Cheddar </h1>
         <p>Menú Online</p>
+        <button id="cart-btn" aria-label="Abrir carrito">🛒</button>
     </header>
 
-    <main>
+    
         <section class="menu">
-            <article class="item">
-                <h2>Clásica</h2>
-                <p>Carne, queso cheddar, lechuga, tomate y salsa especial</p>
-                <span class="precio">$3.500</span>
-                <button>Agregar</button>
-            </article>
+            
+            <main id="container"></main>
 
-            <article class="item">
-                <h2>Cheddar Bacon</h2>
-                <p>Carne, doble cheddar, bacon crocante y barbacoa</p>
-                <span class="precio">$4.200</span>
-                <button>Agregar</button>
-            </article>
-
-            <article class="item">
-                <h2>Veggie</h2>
-                <p>Hamburguesa de garbanzos, queso, lechuga y tomate</p>
-                <span class="precio">$3.800</span>
-                <button>Agregar</button>
-            </article>
         </section>
-    </main>
-
+    
+    		<aside id="cart" class="cart">
+			<button id="close-cart" aria-label="Cerrar carrito">×</button>
+			<h2>Tu Carrito</h2>
+			<div id="carrito-fisico-interno">
+				<p>Tu carrito está vacío.</p>
+			</div>
+			<div id="total"></div>
+			<button id="realizar-pedido" class="realizar-pedido">
+				Realizar pedido
+			</button>
+		</aside>
     <footer>
-        <p>🍟 ¡Tu pedido se hace con amor! &copy; 2025 Mr Cheddar</p>
+        <p>&copy; 2025 Mr Cheddar</p>
     </footer>
     <script src="script\main.js"></script>
 </body>

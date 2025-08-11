@@ -4,7 +4,7 @@
     --color-principal: #e85d04;   /* Naranja tipo cheddar */
     --color-secundario: #6a040f; /* Rojo oscuro */
     --color-fondo: #000000;
-    --color-texto: #333;
+    --color-texto: #ffffff;
     --color-boton: #ffba08;
 }
 
@@ -37,7 +37,7 @@ header p {
 }
 
 .menu {
-    max-width: 800px;
+    max-width: 900px;
     margin: 2rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -45,36 +45,6 @@ header p {
     padding: 0 1rem;
 }
 
-.item {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-
-.item:hover {
-    transform: translateY(-5px);
-}
-
-.item h2 {
-    color: var(--color-secundario);
-    margin-bottom: 0.5rem;
-}
-
-.item p {
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-}
-
-.precio {
-    font-weight: bold;
-    color: var(--color-principal);
-    display: block;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
 
 button {
     background-color: var(--color-boton);
@@ -90,7 +60,33 @@ button:hover {
     background-color: var(--color-principal);
     color: white;
 }
-
+.cart {
+	position: fixed;
+	top: 0;
+	right: -320px;
+	width: 300px;
+	height: 100%;
+	background-color:#e85d04;;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+	padding: 1.5rem;
+	transition: right 0.3s ease;
+	z-index: 1000;
+}
+.cart.show {
+	right: 0;
+}
+.cart h2 {
+	margin-bottom: 1rem;
+}
+#close-cart {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
 footer {
     text-align: center;
     padding: 1rem;
@@ -98,3 +94,4 @@ footer {
     background-color: var(--color-secundario);
     color: white;
 }
+
