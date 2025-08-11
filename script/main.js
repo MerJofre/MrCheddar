@@ -15,6 +15,7 @@ cerrarCarrito.addEventListener("click", () => {
 
 let carrito = [];
 
+
 const opciones = [
 	{   nom: 'Cheddar', 
         ingredientes: 'Pan con queso, cheddarx3, medallon,salsa especial',
@@ -24,34 +25,40 @@ const opciones = [
     },
 	{ 
         nom: 'Bacon', 
-        ingredientes: 'Pan con queso, cheddar, medallon,bacon,cebolla caramelizada,salsa especial', 
+        ingredientes: 'Pan con queso, cheddar, medallon, bacon, cebolla caramelizada, salsa especial', 
         precio:'8500',
-        imagen:'"https://iili.io/FQRwmGt.th.png"',
+        imagen:'https://iili.io/FQNvmAP.th.png',
         id: 2 },
 	{ 
         nom: 'Clasica', 
         ingredientes: 'Pan con sesamo, muzarella, medallon,lechuga y tomate, mayo de ajo', 
         precio:'7500',
-        imagen:'"https://iili.io/FQRwmGt.th.png"',
+        imagen:'https://iili.io/FQNvbHB.th.png"',
         id: 3 },
     { 
         nom: 'Napo', 
-        ingredientes: 'Pan con sesamo, muzarella, medallon,tomate,jamon cocido, mayo de ajo', 
+        ingredientes: 'Pan con sesamo, muzarella, medallon, tomate, jamon cocido, mayo de ajo', 
         precio:'8000',
-        imagen:'"https://iili.io/FQRwmGt.th.png"',
+        imagen:'"https://iili.io/FQNvyDF.th.png"',
         id: 4 },
     { 
         nom: 'Big', 
-        ingredientes: 'Pan con sesamo, cheddar, medallon,pepinillos,lechuga, salsa especial', 
+        ingredientes: 'Pan con sesamo, cheddar, medallon, pepinillos, lechuga, salsa especial', 
         precio:'9000',
-        imagen:'"https://iili.io/FQRwmGt.th.png"',
+        imagen:'"https://iili.io/FQNvpN1.th.png" ',
         id: 5 },
     { 
         nom: 'Spicy', 
-        ingredientes: 'Pan con queso, cheddar, medallon, bacon,jalapeños,aji molido,huevo frito', 
+        ingredientes: 'Pan con queso, cheddar, medallon, bacon, jalapeños, aji molido, huevo frito', 
         precio:'9000',
         imagen:'"https://iili.io/FQRwmGt.th.png"',
         id: 6 },
+            { 
+        nom: 'Chauchas Special', 
+        ingredientes: 'Pan con sesamo, cheddar, medallon, lechuga y chauchas', 
+        precio:'9000',
+        imagen:'https://iili.io/FQN83Kv.th.png',
+        id: 7 },
 ]  
 
 const calculadoraTot = () => {
@@ -96,10 +103,12 @@ const agregadoraDeEventoDeBoton = () => {
 const renderizador = () => {
     opciones.forEach((opcion) => {
         container.innerHTML += `<section class="product-card" id=${opcion.id}>
-				<img
+		<br>		
+        <img
 					src=${opcion.imagen}
 					alt=${opcion.ingredientes}
 				/>
+                
 				<h2>${opcion.nom}</h2>
 				<p>${opcion.ingredientes}</p>
 				<span class="price">$${opcion.precio}</span>
@@ -109,4 +118,7 @@ const renderizador = () => {
 	})
 	agregadoraDeEventoDeBoton()
 }
+
+document.addEventListener('DOMContentLoaded', () => (
 renderizador()
+))

@@ -8,9 +8,9 @@
 </head>
 <body>
     <header>
-        <h1>🍔 Mr Cheddar </h1>
+        <h1>🍔 Mr Cheddar 🍔</h1>
         <p>Menú Online</p>
-        <button id="cart-btn" aria-label="Abrir carrito">🛒</button>
+        <div class="contenedor-boton-carrito"><button id="cart-btn" aria-label="Abrir carrito">Mi Pedido 🛒</button></div>
     </header>
 
     
@@ -27,7 +27,12 @@
 				<p>Tu carrito está vacío.</p>
 			</div>
 			<div id="total"></div>
-			<button id="realizar-pedido" class="realizar-pedido">
+            <div class="cart-notes">
+            <label for="order-notes">Notas para el pedido:</label>
+            <textarea id="order-notes" rows="3" placeholder="Agrega instrucciones especiales..."></textarea>
+            </div>
+			<br>
+            <button id="realizar-pedido" class="realizar-pedido">
 				Realizar pedido
 			</button>
 		</aside>
