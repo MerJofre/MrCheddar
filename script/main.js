@@ -4,6 +4,7 @@ const carritoBoton = document.getElementById("cart-btn")
 const cerrarCarrito = document.getElementById("close-cart")
 const carritoFisicoInterno = document.getElementById("carrito-fisico-interno")
 const total = document.getElementById('total')
+const realizarPedido = document.getElementById('realizar-pedido')
 
 carritoBoton.addEventListener("click", () => {
     carritoFisico.classList.toggle('show')
@@ -79,8 +80,10 @@ const agregadoraCarrito = () => {
 
     let calculoTot = calculadoraTot()
     
+    
     total.innerHTML = `<p> Total:$ ${calculoTot} </p>`
 }
+
 
 const agregadoraDeEventoDeBoton = () => {
 	const botones = document.querySelectorAll('.boton-agregar')
@@ -118,6 +121,12 @@ const renderizador = () => {
 	})
 	agregadoraDeEventoDeBoton()
 }
+
+realizarPedido.addEventListener("click", () => {
+carrito = []
+agregadoraCarrito()
+})
+
 
 document.addEventListener('DOMContentLoaded', () => (
 renderizador()
