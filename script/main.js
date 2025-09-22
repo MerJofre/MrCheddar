@@ -19,60 +19,16 @@ cerrarCarrito.addEventListener("click", () => {
 
 
 let carrito = [];
+let opciones = [] ;
 
 cargarCarrito();
-
-const opciones = [
-	{   nom: 'Cheddar', 
-        ingredientes: 'Pan con queso, cheddarx3, medallon,salsa especial',
-        precio:'7500',
-        id: 1,
-        imagen:'"https://iili.io/FQRwmGt.th.png"'
-    },
-	{ 
-        nom: 'Bacon', 
-        ingredientes: 'Pan con queso, cheddar, medallon, bacon, cebolla caramelizada, salsa especial', 
-        precio:'8500',
-        imagen:'https://iili.io/FQNvmAP.th.png',
-        id: 2 },
-	{ 
-        nom: 'Clasica', 
-        ingredientes: 'Pan con sesamo, muzarella, medallon,lechuga y tomate, mayo de ajo', 
-        precio:'7500',
-        imagen:'https://iili.io/FQNvbHB.th.png"',
-        id: 3 },
-    { 
-        nom: 'Napo', 
-        ingredientes: 'Pan con sesamo, muzarella, medallon, tomate, jamon cocido, mayo de ajo', 
-        precio:'8000',
-        imagen:'"https://iili.io/FQNvyDF.th.png"',
-        id: 4 },
-    { 
-        nom: 'Big', 
-        ingredientes: 'Pan con sesamo, cheddar, medallon, pepinillos, lechuga, salsa especial', 
-        precio:'9000',
-        imagen:'"https://iili.io/FQNvpN1.th.png" ',
-        id: 5 },
-    { 
-        nom: 'Spicy', 
-        ingredientes: 'Pan con queso, cheddar, medallon, bacon, jalapeños, aji molido, huevo frito', 
-        precio:'9000',
-        imagen:'"https://iili.io/FQRwmGt.th.png"',
-        id: 6 },
-            { 
-        nom: 'Chauchas Special', 
-        ingredientes: 'Pan con sesamo, cheddar, medallon, lechuga y chauchas', 
-        precio:'9000',
-        imagen:'https://iili.io/FQN83Kv.th.png',
-        id: 7 },
-]  
 
 function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 function cargarCarrito() {
-    const guardado = localStorage.getItem('carrito');
+const guardado = localStorage.getItem('carrito');
     carrito = guardado ? JSON.parse(guardado) : [];
 }
 
@@ -142,6 +98,7 @@ const agregadoraDeEventoDeBoton = () => {
 
 
 const renderizador = () => {
+    container.innerHTML = '';
     opciones.forEach((opcion) => {
         container.innerHTML += `<section class="product-card" id=${opcion.id}>
 		<br>		
