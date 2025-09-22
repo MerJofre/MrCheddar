@@ -5,6 +5,7 @@ const cerrarCarrito = document.getElementById("close-cart")
 const carritoFisicoInterno = document.getElementById("carrito-fisico-interno")
 const total = document.getElementById('total')
 const realizarPedido = document.getElementById('realizar-pedido')
+const vaciarCarrito = document.getElementById('vaciar-carrito')
 
 
 
@@ -15,7 +16,6 @@ carritoBoton.addEventListener("click", () => {
 cerrarCarrito.addEventListener("click", () => {
     carritoFisico.classList.remove('show')
 })
-
 
 
 let carrito = [];
@@ -44,33 +44,39 @@ const calculadoraTot = () => {
 
 
 const agregadoraCarrito = () => {
-    carritoFisicoInterno.innerHTML = '';
-    carrito.forEach((opcion, idx) => {
-        carritoFisicoInterno.innerHTML += `
-            <div class="carrito-item">
-                <h3>${opcion.nom}</h3>
-                <p>$${opcion.precio}</p>
-                <button class="quitar-producto" data-idx="${idx}">Quitar</button>
-            </div>
-        `;
-    });
+  carritoFisicoInterno.innerHTML = '';
+  carrito.forEach((opcion, idx) => {
+    carritoFisicoInterno.innerHTML += `
+      <div class="carrito-item">
+          <h3>${opcion.nom}</h3>
+          <p>$${opcion.precio}</p>
+          <button class="quitar-producto" data-idx="${idx}">Quitar</button>
+      </div>
+    `;
+  });
 
-    let calculoTot = calculadoraTot();
-    total.innerHTML = `<p> Total:$ ${calculoTot} </p>`;
+  let calculoTot = calculadoraTot();
+  total.innerHTML = `<p> Total:$ ${calculoTot} </p>`;
 
-    
-    document.querySelectorAll('.quitar-producto').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const idx = e.target.getAttribute('data-idx');
-            carrito.splice(idx, 1);
-            guardarCarrito();
-            agregadoraCarrito();
-        });
-    });
+  guardarCarrito();
+};
 
+
+carritoFisicoInterno.addEventListener("click", (e) => {
+  if (e.target.classList.contains("quitar-producto")) {
+    const idx = e.target.getAttribute("data-idx");
+    carrito.splice(idx, 1);
     guardarCarrito();
-}
+    agregadoraCarrito();
+  }
+});
 
+
+realizarPedido.addEventListener("click", () => {
+  carrito = [];
+  guardarCarrito();
+  agregadoraCarrito();
+});
 
 
 const agregadoraDeEventoDeBoton = () => {
@@ -118,14 +124,9 @@ const renderizador = () => {
 }
 
 
-
-
-realizarPedido.addEventListener("click", () => {
-carrito = []
-agregadoraCarrito()
-})
-
-
-document.addEventListener('DOMContentLoaded', () => (
-renderizador()
-))
+fetch("./datos.json")
+  .then(res => res.json())
+  .then(data => {
+    opciones = data;
+    renderizador(); 
+  })
