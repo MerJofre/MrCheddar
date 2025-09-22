@@ -124,9 +124,10 @@ const renderizador = () => {
 }
 
 
-fetch("../datos.json")
+fetch("/datos.json")
   .then(res => res.json())
   .then(data => {
     opciones = data;
     renderizador(); 
   })
+  .catch(err => console.error("Error cargando datos.json:", err));
