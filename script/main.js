@@ -124,7 +124,7 @@ const renderizador = () => {
 }
 
 
-fetch("/datos.json")
+fetch("datos.json")
   .then(res => res.json())
   .then(data => {
     opciones = data;
